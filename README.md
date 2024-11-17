@@ -1,2 +1,24 @@
 # nsu_parallel-programming
 Project for MMF NSU Master's course "Parallel Programming"
+
+## Bitonic sort
+
+There is sequential implementation of Bitonic sort algorithm.
+Program reads an array of integers from the file provided as argument, and writes sorted array to another.
+
+Technical
+
+### Usage example
+```
+> main-seq.exe tests\test3.txt 
+Reading file tests\test3.txt
+Elapsed time: 0.01000 seconds
+Writing result array to tests\test3.txt.result
+```
+
+### Build
+
+```
+gcc -o main-seq -fopenmp .\bitonic_sort_sequential.c .\main.c .\util.c
+gcc -o main-parallel -fopenmp .\bitonic_sort_parallel.c .\main.c .\util.c
+```
