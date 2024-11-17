@@ -5,7 +5,7 @@
 void compAndSwap(int a[], int i, int j, int dir)
 {
     if (dir==(a[i]>a[j]))
-        swap(a[i],a[j]);
+        swap(&a[i],&a[j]);
 }
 
 void swap(int *a, int *b)

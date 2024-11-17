@@ -19,7 +19,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate 2^N random integers and write them to a file.")
     parser.add_argument("N", type=int, help="The exponent N for generating 2^N random integers.")
     parser.add_argument("filename", type=str, help="The output filename to write the integers to.")
-    parser.add_argument("genexpected", type=bool, help="Generate additional file with sorted integers.", default=True)
+    parser.add_argument("--genexpected", action='store_true', help="Generate additional file with sorted integers.")
     
     args = parser.parse_args()
 
