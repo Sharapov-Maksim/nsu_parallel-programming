@@ -7,6 +7,8 @@ int* readFile(const char* filename, int* size) {
     if (file == NULL) {
         perror("Failed to open file");
         return NULL; // Return NULL if the file cannot be opened
+    } else {
+        printf("Reading file %s\n", filename);
     }
 
     // Read the number of elements
@@ -34,27 +36,26 @@ int* readFile(const char* filename, int* size) {
         }
     }
 
-    fclose(file); // Close the file
-    return array; // Return the allocated array
+    fclose(file);
+    return array;
 }
 
 void printArrayToFile(const char* filename, int* array, int size) {
     FILE* file = fopen(filename, "w");
     if (file == NULL) {
         perror("Failed to open file");
-        return; // Exit if the file cannot be opened
+        return;
+    } else {
+        printf("Writing result array to %s\n", filename);
     }
 
-    // Write the size of the array
     fprintf(file, "%d\n", size);
 
-    // Write the elements of the array
     for (int i = 0; i < size; i++) {
         fprintf(file, "%d ", array[i]);
     }
-    fprintf(file, "\n"); // New line after the array elements
-
-    fclose(file); // Close the file
+    fprintf(file, "\n");
+    fclose(file);
 }
 
 // Function to concatenate two strings

@@ -4,8 +4,8 @@
 
 #define MAX(A, B) (((A) > (B)) ? (A) : (B))
 #define MIN(A, B) (((A) > (B)) ? (B) : (A))
-#define UP 0
-#define DOWN 1
+#define UP 1
+#define DOWN 0
 
 int* readFile(const char* filename, int* size);
 void printArrayToFile(const char* filename, int* array, int size);
@@ -24,14 +24,11 @@ int main(int argc, char* argv[]) {
     int size;
     int* array = readFile(filename, &size);
 
-
-    
-
     int numThreads,id;
     
     clock_t start_time = clock();
 
-    numThreads =  omp_get_max_threads();
+    //numThreads =  omp_get_max_threads();
 
     sort(array, size, UP);
 
