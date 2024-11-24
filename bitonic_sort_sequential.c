@@ -52,9 +52,7 @@ void bitonicSort(int a[],int low, int cnt, int dir)
         bitonicMerge(a,low, cnt, dir);
     }
 }
- 
-/* Caller of bitonicSort for sorting the entire array of
-   length N in ASCENDING order */
+
 void sort(int a[], int N, int up)
 {
     bitonicSort(a,0, N, up);

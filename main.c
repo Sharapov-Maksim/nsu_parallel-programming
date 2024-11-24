@@ -24,11 +24,9 @@ int main(int argc, char* argv[]) {
     int size;
     int* array = readFile(filename, &size);
 
-    int numThreads,id;
+    int id;
     
     clock_t start_time = clock();
-
-    //numThreads =  omp_get_max_threads();
 
     sort(array, size, UP);
 
@@ -37,7 +35,7 @@ int main(int argc, char* argv[]) {
     // Calculate elapsed time in seconds
     double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
-    printf("Elapsed time: %.5f seconds\n", elapsed_time);
+    printf("Elapsed time: %.3f seconds\n", elapsed_time);
 
     printArrayToFile(concatStrings(filename, ".result"), array, size);
     free(array);
