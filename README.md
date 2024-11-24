@@ -3,7 +3,7 @@ Project for MMF NSU Master's course "Parallel Programming"
 
 ## Bitonic sort
 
-There is sequential implementation of Bitonic sort algorithm.
+There is sequential and parallel (Open MP) implementation of Bitonic sort algorithm.
 Program reads an array of integers from the file provided as argument, and writes sorted array to another file.
 
 Technical
