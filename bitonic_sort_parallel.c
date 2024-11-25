@@ -105,6 +105,7 @@ void sort(int a[], int N, int up)
     if (DEBUG) {
         printf("Number of threads: %d\n", NUM_THREADS);
     }
+    omp_set_nested();
 
     bitonicSort(a,0, N, up, 0);
 }
